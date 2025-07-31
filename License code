@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>License Key Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #333;
+    }
+    input {
+      padding: 10px;
+      width: 100px;
+      font-size: 16px;
+      margin: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    #output {
+      margin-top: 20px;
+      font-size: 18px;
+      word-break: break-all;
+      color: #222;
+      background: #fff;
+      padding: 15px;
+      border-radius: 5px;
+      display: inline-block;
+      max-width: 90%;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>License Key Generator</h1>
+  <input type="number" id="lengthInput" placeholder="Length" value="100" min="1" max="1000">
+  <br>
+  <button onclick="generateKey()">Generate Key</button>
+
+  <div id="output"></div>
+
+  <script>
+  function generateKey() {
+      const length = parseInt(document.getElementById("lengthInput").value) || 100;
+      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+      let key = "";
+      for (let i = 0; i < length; i++) {
+        key += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      document.getElementById("output").textContent = key;
+    }
+  </script>
+
+</body>
+</html>
+
+
